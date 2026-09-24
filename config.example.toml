@@ -1,0 +1,36 @@
+# Copy this file to config.toml and adjust it.  Do not put secret tokens in
+# version-controlled files; use an environment variable instead.
+
+[asr]
+model = "medium"
+device = "cpu"
+compute_type = "int8"
+language = "zh"
+hotwords = "EtherCAT KINGSTAR RTX64 PDO SDO FoE EoE CoE SoE CiA402 Motion Control Servo Drive"
+word_timestamps = true
+
+[diarization]
+model = "pyannote/speaker-diarization-community-1"
+# Export HF_TOKEN before use, rather than putting the token here.
+token_env = "HF_TOKEN"
+# min_speakers = 3
+# max_speakers = 7
+
+[llm]
+# The default only applies to the `wav2dia llm` command.
+backend = "ollama"
+max_input_chars = 180000
+
+[llm.ollama]
+base_url = "http://localhost:11434"
+model = "qwen3:14b"
+timeout_seconds = 600
+
+[llm.codex]
+executable = "codex"
+timeout_seconds = 900
+
+[llm.agy]
+executable = "agy"
+timeout_seconds = 900
+# model = ""

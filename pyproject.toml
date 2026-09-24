@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wav2dia"
+version = "0.1.0"
+description = "Local audio transcription, speaker diarization, and LLM post-processing"
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+license = { text = "MIT" }
+dependencies = ["packaging>=23"]
+
+[project.optional-dependencies]
+transcription = ["faster-whisper>=1.1,<2"]
+diarization = ["pyannote.audio>=4,<5"]
+tui = ["textual>=0.58", "mutagen>=1.47"]
+all = ["faster-whisper>=1.1,<2", "pyannote.audio>=4,<5", "textual>=0.58", "mutagen>=1.47"]
+
+[project.scripts]
+wav2dia = "wav2dia.cli:main"
+wav2dia-tui = "wav2dia.tui.app:main"
+
+[tool.setuptools.packages.find]
+include = ["wav2dia*"]

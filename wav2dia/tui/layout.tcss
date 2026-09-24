@@ -1,0 +1,219 @@
+Screen {
+    layout: vertical;
+    background: $background;
+    color: $text;
+}
+
+#upper-row {
+    layout: horizontal;
+    height: 2fr;
+    min-height: 16;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+.pane {
+    height: 100%;
+    border: round $primary;
+    padding: 1 2;
+    background: $surface;
+}
+
+.pane:focus-within,
+.pane:focus {
+    border: heavy $warning;
+}
+
+#files-pane {
+    width: 37%;
+    min-width: 24;
+    border-title-color: $accent;
+}
+
+#results-pane {
+    width: 37%;
+    min-width: 36;
+}
+
+#reserved-pane {
+    width: 26%;
+    min-width: 20;
+    content-align: center middle;
+    color: $text-muted;
+}
+
+#status-pane {
+    height: 1fr;
+    min-height: 10;
+    border: heavy $accent;
+    background: $panel;
+}
+
+#status-content {
+    width: 100%;
+}
+
+.reserved-copy {
+    content-align: center middle;
+    height: 100%;
+    width: 100%;
+}
+
+Static {
+    width: 100%;
+}
+
+.pane-heading {
+    height: 1;
+    margin-bottom: 1;
+    color: $accent;
+}
+
+Tree {
+    height: 1fr;
+    width: 100%;
+    background: transparent;
+    border: none;
+}
+
+Tree > .tree--cursor {
+    background: $primary 35%;
+}
+
+Tree:focus > .tree--cursor {
+    background: $warning 45%;
+    color: $background;
+}
+
+ProgressTestScreen {
+    align: center middle;
+}
+
+#progress-dialog {
+    width: 60vw;
+    min-width: 48;
+    box-sizing: border-box;
+    height: auto;
+    padding: 1 2;
+    border: heavy $accent;
+    background: $panel;
+}
+
+#progress-phase {
+    width: 100%;
+    text-align: center;
+    text-style: bold;
+    color: $accent;
+}
+
+#progress-row {
+    width: 100%;
+    height: 3;
+    layout: horizontal;
+    align: center middle;
+}
+
+#ascii-spinner {
+    width: 3;
+    text-align: center;
+    text-style: bold;
+    color: $warning;
+}
+
+#pipeline-progress {
+    width: 1fr;
+}
+
+#pipeline-progress > #bar {
+    width: 100%;
+}
+
+#pipeline-progress > Bar > .bar--bar {
+    color: $accent;
+    background: $accent 25%;
+}
+
+#elapsed-time {
+    width: 100%;
+    text-align: center;
+    color: $text-muted;
+}
+
+#progress-help {
+    width: 100%;
+    text-align: center;
+    color: $text-muted;
+}
+
+#run-choice-dialog,
+#diarize-settings-dialog,
+#run-confirm-dialog {
+    width: 60vw;
+    min-width: 48;
+    box-sizing: border-box;
+    height: auto;
+    padding: 1 2;
+    border: heavy $accent;
+    background: $panel;
+}
+
+#choice-title {
+    text-align: center;
+    text-style: bold;
+    color: $accent;
+}
+
+#diarize-settings-title,
+#confirm-title {
+    text-align: center;
+    text-style: bold;
+    color: $accent;
+}
+
+#choice-detail,
+#choice-help,
+#diarize-settings-detail,
+#diarize-settings-help,
+#confirm-help {
+    text-align: center;
+    color: $text-muted;
+}
+
+#confirm-detail {
+    width: 100%;
+    padding: 1 2;
+}
+
+.diarize-setting-row {
+    width: 100%;
+    height: 3;
+    align: center middle;
+}
+
+.diarize-setting-label {
+    width: 1fr;
+    text-align: right;
+    padding-right: 2;
+}
+
+.diarize-setting-input {
+    width: 12;
+}
+
+#diarize-settings-error {
+    height: 1;
+    text-align: center;
+    color: $error;
+}
+
+#choice-actions,
+#diarize-settings-actions,
+#confirm-actions {
+    width: 100%;
+    height: 3;
+    align: center middle;
+}
+
+.choice-button {
+    margin: 0 1;
+}
